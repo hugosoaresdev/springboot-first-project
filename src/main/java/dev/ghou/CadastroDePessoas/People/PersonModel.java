@@ -1,9 +1,10 @@
-package dev.ghou.CadastroDePessoas;
+package dev.ghou.CadastroDePessoas.People;
 
+import dev.ghou.CadastroDePessoas.Trip.TripModel;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tb_cadastro")
+@Table(name = "tb_registration") //tabela_cadastro
 public class PersonModel {
 
     @Id
@@ -13,6 +14,11 @@ public class PersonModel {
     private int age;
     private String email;
 
+    //Many pessoas to one viagem. Um objeto PersonModel tem uma única viagem
+    @ManyToOne
+    @JoinColumn(name = "trips_id") //Foreing key/ chave estrangeira
+    private TripModel trip;
+
     public PersonModel() {
     }
 
@@ -21,6 +27,7 @@ public class PersonModel {
         this.age = age;
         this.email = email;
     }
+
 
     public Long getId() {
         return id;
