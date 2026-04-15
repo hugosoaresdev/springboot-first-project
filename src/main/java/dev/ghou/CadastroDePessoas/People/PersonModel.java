@@ -15,8 +15,12 @@ public class PersonModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private int age;
+
+    @Column(unique = true)
     private String email;
 
     //Many pessoas to one viagem. Um objeto PersonModel tem uma única viagem
