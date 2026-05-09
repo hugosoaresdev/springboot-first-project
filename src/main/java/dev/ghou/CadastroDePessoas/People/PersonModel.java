@@ -17,13 +17,13 @@ public class PersonModel {
     @Column (name = "id")
     private Long id;
 
-    @Column (name = "name")
-    private String name;
+    @Column (name = "name") //quando o nome da coluna for igual ao da variável,
+    private String name;    //é redundante colocar nome - como no age abaixo
 
-    @Column (name = "age")
+    @Column //nem do Column na verdade precisa nesse caso
     private int age;
 
-    @Column(unique = true)
+    @Column(name = "email", unique = true) //nesse caso precisa do Collum pq tem o unique
     private String email;
 
     //Many pessoas to one viagem. Um objeto PersonModel tem uma única viagem
