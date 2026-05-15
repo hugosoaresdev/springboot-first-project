@@ -24,7 +24,7 @@ public class PersonController {
     }
 
     // Mostrar todas as Pessoas (Read)
-    @GetMapping("/mostrarTodos")
+    @GetMapping("/mostrarTodas")
     public String mostrarTodos() {
         return "Mostrar todas as Pessoas";
     }

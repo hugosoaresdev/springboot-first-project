@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 public class TripController {
 
     // GET -- Manda uam requisição para mostra uma viagem
-    @GetMapping("/mostrar")
+    @GetMapping("/mostrarViagem")
     public String mostrarViagem(){
         return "Viagem";
     }
@@ -19,7 +19,7 @@ public class TripController {
 
     // POST -- Manda uma requisição para criar uma viagem
     // localhost8080:/trips/criar
-    @PostMapping("/criar")
+    @PostMapping("/add")
     public String criarViagem(){
         return "Viagem Criada";
     }
