@@ -1,2 +1,4 @@
--- Estava dando erro. Apaguei o conteúdo de V2 e colei no V3, por isso nomes iguais.
+-- Migrations para adicionar a coluna de data na tb_trips
 
+ALTER TABLE tb_trips
+    ADD COLUMN trip_date DATE;
