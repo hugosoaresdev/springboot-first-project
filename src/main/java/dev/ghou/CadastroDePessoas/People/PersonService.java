@@ -9,19 +9,25 @@ import java.util.Optional;
 public class PersonService {
 
     private PersonRepository personRepository;
+    private PersonMapper personMapper;
 
-    public PersonService(PersonRepository personRepository){
+    public PersonService(PersonRepository personRepository, PersonMapper personMapper) {
         this.personRepository = personRepository;
+        this.personMapper = personMapper;
     }
 
-    public PersonModel adicionarPessoa(PersonModel person){
-        return personRepository.save(person);
+    public PersonDTO adicionarPessoa(PersonDTO personDTO){
+        PersonModel person = personMapper.map(personDTO);
+        person = personRepository.save(person);
+        return personMapper.map(person);
     }
 
-    public PersonModel alterarPessoa(Long id, PersonModel pessoaAtualizada){
+    public PersonDTO alterarPessoa(Long id, PersonDTO pessoaAtualizada){
+        PersonModel person = personMapper.map(pessoaAtualizada);
         if(personRepository.existsById(id)){
             pessoaAtualizada.setId(id);
-            return personRepository.save(pessoaAtualizada);
+            person = personRepository.save(person);
+            return personMapper.map(person);
         } else{
             return null;
         }

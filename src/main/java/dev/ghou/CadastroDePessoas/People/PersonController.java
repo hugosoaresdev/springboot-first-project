@@ -22,7 +22,7 @@ public class  PersonController {
 
     // Adicionar Pessoa (Create)
     @PostMapping("/adicionar")
-    public PersonModel adicionarPessoa(@RequestBody PersonModel person){
+    public PersonDTO adicionarPessoa(@RequestBody PersonDTO person){
         return personService.adicionarPessoa(person);
     }
 
@@ -40,7 +40,7 @@ public class  PersonController {
 
     // Alterar dados das Pessoas (Update)
     @PutMapping("/alterar/{id}")
-    public PersonModel alterarPessoa(@PathVariable Long id, @RequestBody PersonModel pessoaAtualizada){
+    public PersonDTO alterarPessoa(@PathVariable Long id, @RequestBody PersonDTO pessoaAtualizada){
         return personService.alterarPessoa(id, pessoaAtualizada);
     }
 

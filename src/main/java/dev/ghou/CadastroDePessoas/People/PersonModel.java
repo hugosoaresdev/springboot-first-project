@@ -31,9 +31,5 @@ public class PersonModel {
     @JoinColumn(name = "trips_id") //Foreing key/ chave estrangeira
     private TripModel trip;
 
-    public PersonModel(String name, int age, String email) {
-        this.name = name;
-        this.age = age;
-        this.email = email;
-    }
+
 }
