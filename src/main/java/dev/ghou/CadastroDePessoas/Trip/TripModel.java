@@ -1,5 +1,6 @@
 package dev.ghou.CadastroDePessoas.Trip;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.ghou.CadastroDePessoas.People.PersonModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,7 @@ public class TripModel {
 
     //Uma Viagem pode ter várias pessoas
     @OneToMany(mappedBy = "trip")
+    @JsonIgnore
     private List<PersonModel> people;
 
     public TripModel(String trip, BigDecimal cost, String person) {

@@ -3,36 +3,36 @@ package dev.ghou.CadastroDePessoas.Trip;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("trips")
+@RequestMapping("viagem")
 public class TripController {
 
     // GET -- Manda uam requisição para mostra uma viagem
     @GetMapping("/mostrarViagem")
     public String mostrarViagem(){
-        return "Viagem";
+        return "Mostrar Viagem";
     }
 
-    @GetMapping("/mostrarTodas")
+    @GetMapping("/mostrarViagens")
     public String mostrarViagens(){
-        return "Viagens";
+        return "Mostrar Viagens";
     }
 
     // POST -- Manda uma requisição para criar uma viagem
     // localhost8080:/trips/criar
-    @PostMapping("/add")
-    public String criarViagem(){
-        return "Viagem Criada";
+    @PostMapping("/adicionar")
+    public String adicionarViagem(){
+        return "Viagem adicionada";
     }
 
     // PUT -- Manda uma requisição para alterar uma viagem
     @PutMapping("/alterar")
-    public String alteraViagem(){
-        return "Viagem Alterada";
+    public String alterarViagem(){
+        return "Viagem alterada";
     }
 
     // DELETE -- Manda uma requisição para deletar uma viagem
     @DeleteMapping("/deletar")
-    public String deletaViagem(){
+    public String deletarViagem(){
         return "Viagem deletada";
     }
 }
